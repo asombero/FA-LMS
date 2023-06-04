@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+    font-family: "Montserrat", sans-serif;   
+}
+/*------------------------------------------Heading Starts Here-------------------------------------------*/
+.heading{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(31, 49, 119, 0.7), rgba(31, 49, 119, 0.7)), url(images/MCHP-BACKGROUND.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+
+.block-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background-color: rgba(178, 36, 1, 1);
+}
+
+.MCHP{
+    width: 200px;
+    height: 80px;
+    padding-top: 0;
+    padding-bottom: 10px;
+    padding-left: 1px;
+    padding-right: 1px;
+    object-fit: contain;
+    cursor: pointer
+}
+
+li, a, button {
+    font-weight: 550;
+    font-size: 17px;
+    color: #edf0f1;
+    text-decoration: none
+}
+
+.nav_links{
+    list-style: none;
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0px 50px;
+}
+
+.nav_links li a {
+    font-size: 15px;
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover {
+    color: rgb(106, 36, 159);
+    font-size: 16px;
+    opacity: 1;
+}
+
+
+.dropbtn{
+    background-color: inherit;
+    border: none;
+}
+
+.dropdown-content {
+    display:none;
+    position: absolute;
+    background-color: rgba(172, 179, 199, 1);
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
+    z-index: 5;
+    border-radius: 8px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 5px 16px;
+    text-decoration: none;
+    display: block;
+    opacity: 0.6;
+}
+
+.dropdown-content a:hover { 
+    background-color: rgb(189, 197, 220);
+    border-radius: 8px;
+}
+
+/*------------------------------------------Heading Ends Here-------------------------------------------*/
+/*------------------------------------------     Dashboard-Sidebar Starts Here    -------------------------------------------*/
+
+:root{
+    /* ====== Colors ====== */
+    --body-color: #E4E9F7;
+    --sidebar-color: #FFF;
+    --primary-color: #695CFE;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #DDD;
+    --text-color: #707070;
+    --hoverbox-color: rgba(176, 208, 237);
+
+    /* ====== Transitions ====== */
+
+    --trans-03: all 0.2s ease;
+    --trans-03: all 0.3s ease;
+    --trans-04: all 0.4s ease;
+    --trans-05: all 0.5s ease;
+}
+
+.side-nav .sidebar{
+    height:100%;
+    width:350px;
+    background: var(--body-color);
+    position: fixed;
+    left:0;
+    top:0;
+    border-radius: 0 4px 4px 0;
+    z-index: 100;
+    transition: all 0.5s ease;
+}
+.side-nav .sidebar.close{
+    width: 65px;
+}
+
+    /* ====== Reusable CSS ====== */
+
+.sidebar .image-text {
+    height:100px;
+    width:100%;
+    display: flex;  
+    align-items: center;
+}
+.sidebar .image-text i {
+    color: #151515;
+    background: rgba(171, 219, 253, 0.7);
+    height: 50px;
+    min-width: 78px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 5px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.sidebar .image-text .name {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.sidebar .sidenav-links {
+    height: 100%;
+    padding: 30px 0 150px 0;
+    overflow: auto;
+}
+.sidebar .sidenav-links::-webkit-scrollbar{
+    display: none;
+}
+.sidebar .sidenav-links li {
+    position: relative;
+    list-style: none;
+    transition: all 0.4s ease;
+}
+.sidebar .sidenav-links li:hover{
+    background: var(--hoverbox-color);
+}
+
+.sidebar .sidenav-links li i {
+    height: 50px;
+    min-width: 65px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    color:rgba(25, 45, 125, 0.7);
+    transition: all 0.3s ease;
+}
+
+.sidebar .sidenav-links li.showMenu i.arrow{
+    transform: rotate(-180deg);
+}
+.sidebar .sidenav-links li a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.sidebar .sidenav-links li a .link_name{
+    font-size: 18px;
+    font-weight: 400;
+    color:rgba(31, 49, 119, 0.7);
+} 
+.sidebar .sidenav-links li .icon-link{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sidebar .sidenav-links li .sub-menu{
+    padding: 6px 6px 14px 80px;
+    margin-top: -10px;
+    background-color: var(--hoverbox-color);
+    display: none;
+}
+.sidebar .sidenav-links li.showMenu .sub-menu{
+    display: block;
+}
+.sidebar.close .sidenav-links li .sub-menu{
+    position: absolute;
+    left: 100%;
+    top: -10px;
+    margin-top: 0;
+    padding: 10px 20px;
+    border-radius: 0 6px 6px 0;
+    transition: all 0.4s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+.sidebar.close .sidenav-links li:hover .sub-menu{
+    top: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+.sidebar .sidenav-links li .sub-menu a{
+    color:rgba(31, 49, 119, 0.7);
+    font-size: 15px;
+    padding: 5px 0;
+    white-space: nowrap;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+.sidebar .sidenav-links li .sub-menu .link_name{
+    display: none;
+}
+.sidebar.close .sidenav-links li .sub-menu .link_name{
+    display: none;
+}
+.sidebar.close .sidenav-links li .sub-menu .link_name{
+    font-size: 18px;
+    opacity: 1;
+    display: block;
+}
+
+
+.sidebar .sidenav-links li .sub-menu a:hover{
+    color: red;
+    opacity: 1;
+}
+.home-section{
+    position: relative;
+    background: var(--body-color);
+    /*background: rgba(171, 219, 253, 0.7);*/
+    height: 10;
+    left: 350px;
+    width: calc(100% - 350px);
+    transition: all 0.5s ease;
+}
+.sidebar.close ~ .home-section{
+    left: 65px;
+    width: calc(100% - 65px);
+}
+.home-section .home-content{
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+.home-section .home-content .bx-menu, .home-section .home-content .text {
+    color: rgba(31, 49, 119, 1);
+    font-size: 35px;
+}
+.home-section .home-content .text{
+    font-size: 26px;
+    font-weight: 600;
+}
+.home-section .home-content .bx-menu{
+    margin: 0 15px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+.home-section .home-content .bx-menu:hover{
+    background-color: var(--hoverbox-color);
+}
+
+
+/*------------------------------------------     Dashboard-Sidebar Ends Here    -------------------------------------------*/
+/*------------------------------------------ Card Boxes ------------------------------------------------*/
+
+img {
+    height: 200px;
+    border-radius: 8px;
+}
+
+
+.card {
+
+    display: flex;
+    border-radius: 20px;
+    justify-content: space-between;
+    align-items: first baseline;
+    background-color: rgba(255, 166, 0, 0.637);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
+    margin: 10px auto 0 auto;
+    padding: 10px;
+    width: 60%;
+    cursor: pointer;
+}
+
+h1, h2 {
+    font-family: "Montserrat", sans-serif;
+    text-align: left;
+    padding: 0 30px;
+}
+
+h1 {
+    font-size: 30px;
+    margin:0;    
+}
+
+h2{
+    font-size: 18px;
+}
+
+.container div h1 {
+    transition: all 0.3s ease 0s;
+}
+
+.container div h1:hover {
+    color: #ffffff;
+}
+/*------------------------------------------ Hovers ------------------------------------------------*/
+.FA-sites:hover .dropdown-content {display: block;}
+.Lot-Dbase:hover .dropdown-content {display: block;}
+.People-serve:hover .dropdown-content {display: block;}
+
+
+
+
+
